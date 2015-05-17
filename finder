@@ -1,0 +1,15 @@
+#! /user/bin/env php
+
+<?php
+
+use Symfony\Component\Console\Application;
+
+require 'vendor/autoload.php';
+
+$app = new Application('Finder App', '1.0');
+
+$finderService = new Vanbrabantf\FinderService();
+
+$app->add(new Vanbrabantf\FindCommand($finderService));
+
+$app->run();
